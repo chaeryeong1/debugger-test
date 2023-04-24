@@ -1,0 +1,595 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>Debugger</title>
+    <!--디버거 기본 라이브러리-->
+    <link rel="stylesheet" href="styles.css ">
+
+    <!-- 테일윈드 -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.css">
+  </head>
+ 
+  <body style="border-radius: 30px;  margin: 10px; box-shadow: 0 0 10px rgba(0, 0, 0, 0.4)">
+    
+    <section class="main-app">
+      <div id="app">
+      <div id="title-bar">
+        <button id="logo">
+          <span><img src="./images/icon/logo.png" alt="logo"></span>
+        </button>
+        <div class="title-blank"></div>
+        <button id="alarm">
+          <span><img src="./images/icon/alarm_logo.png" alt="-_icon">
+        </button>
+        <button id="setting">
+          <span><img src="./images/icon/setting_icon.png" alt="-_icon"></span>
+        </button>
+        <button id="minimize">
+          <span><img src="./images/icon/-_icon.png" alt="-_icon"></span>
+        </button>
+        <!-- 이거 지우니까 창 안닫힘.. 지우고싶음 .....최대화 버튼...-->
+        <button id="maximize">
+          
+        </button>
+        <button id="close">
+          <img src="./images/icon/x_icon.png" alt="x_icon">
+        </button>
+      </div>
+      <div class="main_profile flex">
+        <div class="friend-profile-reft_bottom flex">
+          <span><img class="friend-profile-img" src="images/friend/profile-1.png" alt=""></span>
+          <div class="friend-profile-text flex flex-col">
+          <span class="friend-on"></span>
+          <span class="friend-name">버니</span>
+          <span class="firend-department">서비스사업부</span>
+          </div>
+          </div>
+      </div>
+      <div class="content_scroll">
+      <div id="content flex">
+        <div class="score">
+          <div class="my_score_all">
+            <span><img src="./images/score/4_svg.svg" alt="4_score"></img></span>
+            <span class="my_score">내 점수</span>
+        </div>
+          <div class="score_stroke"></div>
+          <div class="member_score_all flex">
+            <span class="member_score_img"> 
+              <span><img src="./images/score/6_svg.svg" alt="6_score"></img></span>
+          </span>
+          <span class="member_score flex">
+          <span>멤버들의 점수</span>
+          <span class="member_score_company">세퍼드</span>
+          </span>
+        </div>
+        </div>
+        <div class="serch-bar_group_">
+        <div class="serch-bar_group_b">
+          <span>ex) @1234 그룹 코드를 검색해서 입장</span>
+        </div>
+      </div>
+      <div class="group">
+           <span class="group_line"></span>
+          
+           <div class="group_content flex">
+            <div class="group_name flex">세</div>
+            <span class="group_name_">세퍼드</span>
+            <div class="group_reader"><a href="#">그룹장 식별번호</a></div>
+           <div class="group_pin">
+            <span><img src="images/friend/pin.svg" alt=""></span>
+           </div>
+            </div>
+            <span class="group_line"></span>
+           </div>
+          
+        <div class="friend flex">
+           
+          <div class="list">
+            <ul>
+              <li class="friend_list_1 text-black"><button>온라인▼</button></li>
+              <li class="friend_list_2"><button>점수▲</button></li>
+              <li class="friend_list_3"><button>이름▲</button></li>
+              <li class="friend_list_4"><button>즐겨찾기순</button></li>
+            </ul>
+          </div>
+          <div class="friend-profile ">
+            <ul>
+            <li class="friend-profile_li friend-profile-1 flex ">
+              <div class="friend-profile-reft flex">
+              <span><img class="friend-profile-img" src="images/friend/profile-1.png" alt=""></span>
+              <div class="friend-profile-text flex flex-col">
+              <span class="friend-on"></span>
+              <span class="friend-name">에일리</span>
+              <span class="firend-department">서비스사업부</span>
+              </div>
+              </div>
+              <div class="friend-profile-right flex">
+                <div class="friend-profile-score">
+                  <span><img src="images/score/4_svg.svg" alt=""></span>
+                </div>
+              </div>
+            </li>
+            <li class="friend-space"></li>
+            <li class="friend-profile-2 flex ">
+              <div class="friend-profile-reft flex">
+              <span><img class="friend-profile-img" src="images/friend/profile-1.png" alt=""></span>
+              <div class="friend-profile-text flex flex-col">
+              <span class="friend-on"></span>
+              <span class="friend-name">버니</span>
+              <span class="firend-department">서비스사업부</span>
+              </div>
+              </div>
+              <div class="friend-profile-right flex">
+                <div class="friend-profile-score">
+                  <span><img src="images/score/4_svg.svg" alt=""></span>
+                </div>
+              </div>
+            </li>
+            <li class="friend-space"></li>
+            <li class="friend-profile-3 flex ">
+              <div class="friend-profile-reft flex">
+              <span><img class="friend-profile-img" src="images/friend/profile-1.png" alt=""></span>
+              <div class="friend-profile-text flex flex-col">
+              <span class="friend-on"></span>
+              <span class="friend-name">버니</span>
+              <span class="firend-department">서비스사업부</span>
+              </div>
+              </div>
+              <div class="friend-profile-right flex">
+                <div class="friend-profile-score">
+                  <span><img src="images/score/4_svg.svg" alt=""></span>
+                </div>
+              </div>
+            </li>
+            <li class="friend-space"></li>
+            <li class="friend-profile-4 flex ">
+              <div class="friend-profile-reft flex">
+              <span><img class="friend-profile-img" src="images/friend/profile-1.png" alt=""></span>
+              <div class="friend-profile-text flex flex-col">
+              <span class="friend-on"></span>
+              <span class="friend-name">버니</span>
+              <span class="firend-department">서비스사업부</span>
+              </div>
+              </div>
+              <div class="friend-profile-right flex">
+                <div class="friend-profile-score">
+                  <span><img src="images/score/4_svg.svg" alt=""></span>
+                </div>
+              </div>
+            </li>
+            <li class="friend-space"></li>
+            <li class="friend-profile-5 flex ">
+              <div class="friend-profile-reft flex">
+              <span>
+                <img class="friend-profile-img" src="images/friend/profile-1.png" alt="">
+              </span>
+              <div class="friend-profile-text flex flex-col">
+              <span class="friend-on"></span>
+              <span class="friend-name">버니</span>
+              <span class="firend-department">서비스사업부</span>
+              </div>
+              </div>
+              <div class="friend-profile-right flex">
+                <div class="friend-profile-score">
+                  <img src="images/score/4_svg.svg" alt="">
+                </div>
+              </div>
+            </li>
+            <li class="friend-space"></li>
+            <li class="friend-profile-6 flex ">
+              <div class="friend-profile-reft flex">
+              <span>
+                <img class="friend-profile-img" src="images/friend/profile-1.png" alt="">
+              </span>
+              <div class="friend-profile-text flex flex-col">
+              <span class="friend-on"></span>
+              <span class="friend-name">버니</span>
+              <span class="firend-department">서비스사업부</span>
+              </div>
+              </div>
+              <div class="friend-profile-right flex">
+                <div class="friend-profile-score">
+                  <img src="images/score/4_svg.svg" alt="">
+                </div>
+              </div>
+            </li>
+            <li class="friend-space"></li>
+            <li class="friend-profile-6 flex ">
+              <div class="friend-profile-reft flex">
+              <span>
+                <img class="friend-profile-img" src="images/friend/profile-1.png" alt="">
+              </span>
+              <div class="friend-profile-text flex flex-col">
+              <span class="friend-on"></span>
+              <span class="friend-name">버니</span>
+              <span class="firend-department">서비스사업부</span>
+              </div>
+              </div>
+              <div class="friend-profile-right flex">
+                <div class="friend-profile-score">
+                  <img src="images/score/4_svg.svg" alt="">
+                </div>
+              </div>
+            </li>
+            <li class="friend-space"></li>
+            <li class="friend-profile-6 flex ">
+              <div class="friend-profile-reft flex">
+              <span>
+                <img class="friend-profile-img" src="images/friend/profile-1.png" alt="">
+              </span>
+              <div class="friend-profile-text flex flex-col">
+              <span class="friend-on"></span>
+              <span class="friend-name">버니</span>
+              <span class="firend-department">서비스사업부</span>
+              </div>
+              </div>
+              <div class="friend-profile-right flex">
+                <div class="friend-profile-score">
+                  <img src="images/score/4_svg.svg" alt="">
+                </div>
+              </div>
+            </li>
+            <li class="friend-space"></li>
+            <li class="friend-profile-6 flex ">
+              <div class="friend-profile-reft flex">
+              <span>
+                <img class="friend-profile-img" src="images/friend/profile-1.png" alt="">
+              </span>
+              <div class="friend-profile-text flex flex-col">
+              <span class="friend-on"></span>
+              <span class="friend-name">버니</span>
+              <span class="firend-department">서비스사업부</span>
+              </div>
+              </div>
+              <div class="friend-profile-right flex">
+                <div class="friend-profile-score">
+                  <img src="images/score/4_svg.svg" alt="">
+                </div>
+              </div>
+            </li>
+            <li class="friend-space"></li>
+            <li class="friend-profile-6 flex ">
+              <div class="friend-profile-reft flex">
+              <span>
+                <img class="friend-profile-img" src="images/friend/profile-1.png" alt="">
+              </span>
+              <div class="friend-profile-text flex flex-col">
+              <span class="friend-on"></span>
+              <span class="friend-name">버니</span>
+              <span class="firend-department">서비스사업부</span>
+              </div>
+              </div>
+              <div class="friend-profile-right flex">
+                <div class="friend-profile-score">
+                  <img src="images/score/4_svg.svg" alt="">
+                </div>
+              </div>
+            </li>
+            <li class="friend-space"></li>
+            <li class="friend-profile-6 flex ">
+              <div class="friend-profile-reft flex">
+              <span>
+                <img class="friend-profile-img" src="images/friend/profile-1.png" alt="">
+              </span>
+              <div class="friend-profile-text flex flex-col">
+              <span class="friend-on"></span>
+              <span class="friend-name">버니</span>
+              <span class="firend-department">서비스사업부</span>
+              </div>
+              </div>
+              <div class="friend-profile-right flex">
+                <div class="friend-profile-score">
+                  <img src="images/score/4_svg.svg" alt="">
+                </div>
+              </div>
+            </li>
+            <li class="friend-space"></li>
+            <li class="friend-profile-6 flex ">
+              <div class="friend-profile-reft flex">
+              <span>
+                <img class="friend-profile-img" src="images/friend/profile-1.png" alt="">
+              </span>
+              <div class="friend-profile-text flex flex-col">
+              <span class="friend-on"></span>
+              <span class="friend-name">버니</span>
+              <span class="firend-department">서비스사업부</span>
+              </div>
+              </div>
+              <div class="friend-profile-right flex">
+                <div class="friend-profile-score">
+                  <img src="images/score/4_svg.svg" alt="">
+                </div>
+              </div>
+            </li>
+            <li class="friend-space"></li>
+            <li class="friend-profile-6 flex ">
+              <div class="friend-profile-reft flex">
+              <span>
+                <img class="friend-profile-img" src="images/friend/profile-1.png" alt="">
+              </span>
+              <div class="friend-profile-text flex flex-col">
+              <span class="friend-on"></span>
+              <span class="friend-name">버니</span>
+              <span class="firend-department">서비스사업부</span>
+              </div>
+              </div>
+              <div class="friend-profile-right flex">
+                <div class="friend-profile-score">
+                  <img src="images/score/4_svg.svg" alt="">
+                </div>
+              </div>
+            </li>
+            <li class="friend-space"></li>
+            <li class="friend-profile-6 flex ">
+              <div class="friend-profile-reft flex">
+              <span>
+                <img class="friend-profile-img" src="images/friend/profile-1.png" alt="">
+              </span>
+              <div class="friend-profile-text flex flex-col">
+              <span class="friend-on"></span>
+              <span class="friend-name">버니</span>
+              <span class="firend-department">서비스사업부</span>
+              </div>
+              </div>
+              <div class="friend-profile-right flex">
+                <div class="friend-profile-score">
+                  <img src="images/score/4_svg.svg" alt="">
+                </div>
+              </div>
+            </li>
+            <li class="friend-space"></li>
+            <li class="friend-profile-6 flex ">
+              <div class="friend-profile-reft flex">
+              <span>
+                <img class="friend-profile-img" src="images/friend/profile-1.png" alt="">
+              </span>
+              <div class="friend-profile-text flex flex-col">
+              <span class="friend-on"></span>
+              <span class="friend-name">버니</span>
+              <span class="firend-department">서비스사업부</span>
+              </div>
+              </div>
+              <div class="friend-profile-right flex">
+                <div class="friend-profile-score">
+                  <img src="images/score/4_svg.svg" alt="">
+                </div>
+              </div>
+            </li>
+            <li class="friend-space"></li>
+            <li class="friend-profile-6 flex ">
+              <div class="friend-profile-reft flex">
+              <span>
+                <img class="friend-profile-img" src="images/friend/profile-1.png" alt="">
+              </span>
+              <div class="friend-profile-text flex flex-col">
+              <span class="friend-on"></span>
+              <span class="friend-name">버니</span>
+              <span class="firend-department">서비스사업부</span>
+              </div>
+              </div>
+              <div class="friend-profile-right flex">
+                <div class="friend-profile-score">
+                  <img src="images/score/4_svg.svg" alt="">
+                </div>
+              </div>
+            </li>
+            <li class="friend-space"></li>
+            <li class="friend-profile-6 flex ">
+              <div class="friend-profile-reft flex">
+              <span>
+                <img class="friend-profile-img" src="images/friend/profile-1.png" alt="">
+              </span>
+              <div class="friend-profile-text flex flex-col">
+              <span class="friend-on"></span>
+              <span class="friend-name">버니</span>
+              <span class="firend-department">서비스사업부</span>
+              </div>
+              </div>
+              <div class="friend-profile-right flex">
+                <div class="friend-profile-score">
+                  <img src="images/score/4_svg.svg" alt="">
+                </div>
+              </div>
+            </li>
+            <li class="friend-space"></li>
+            <li class="friend-profile-6 flex ">
+              <div class="friend-profile-reft flex">
+              <span>
+                <img class="friend-profile-img" src="images/friend/profile-1.png" alt="">
+              </span>
+              <div class="friend-profile-text flex flex-col">
+              <span class="friend-on"></span>
+              <span class="friend-name">버니</span>
+              <span class="firend-department">서비스사업부</span>
+              </div>
+              </div>
+              <div class="friend-profile-right flex">
+                <div class="friend-profile-score">
+                  <img src="images/score/4_svg.svg" alt="">
+                </div>
+              </div>
+            </li>
+            <li class="friend-space"></li>
+            <li class="friend-profile-6 flex ">
+              <div class="friend-profile-reft flex">
+              <span>
+                <img class="friend-profile-img" src="images/friend/profile-1.png" alt="">
+              </span>
+              <div class="friend-profile-text flex flex-col">
+              <span class="friend-on"></span>
+              <span class="friend-name">버니</span>
+              <span class="firend-department">서비스사업부</span>
+              </div>
+              </div>
+              <div class="friend-profile-right flex">
+                <div class="friend-profile-score">
+                  <img src="images/score/4_svg.svg" alt="">
+                </div>
+              </div>
+            </li>
+            <li class="friend-space"></li>
+            <li class="friend-profile-6 flex ">
+              <div class="friend-profile-reft flex">
+              <span>
+                <img class="friend-profile-img" src="images/friend/profile-1.png" alt="">
+              </span>
+              <div class="friend-profile-text flex flex-col">
+              <span class="friend-on"></span>
+              <span class="friend-name">버니</span>
+              <span class="firend-department">서비스사업부</span>
+              </div>
+              </div>
+              <div class="friend-profile-right flex">
+                <div class="friend-profile-score">
+                  <img src="images/score/4_svg.svg" alt="">
+                </div>
+              </div>
+            </li>
+          </ul>
+          </div>
+        </div>
+      </div>
+      </div>
+      <div class="content_2 flex">
+        <div class="my_pc_security">
+        
+          <div class="top-bar">
+        <ul>
+          <li class="top-bar-menu_home"><a href="index.html">홈 메뉴</a></li>
+          <span class="top-bar-line"></span>
+          <li class="top-bar-menu_backup"><a href="backup/backup.html">백업</a></li>
+          <span class="top-bar-line"></span>
+          <li class="top-bar-menu_secu"><button>보안 관리</button></li>
+          <span class="top-bar-line"></span>
+          <li class="top-bar-menu_log"><button>통계</button></li>
+          <span class="top-bar-line"></span>
+          <li class="top-bar-menu_add"><button>광고 슬쩍 보기</button></li>
+        </ul>
+        <div class="serch-bar">
+          <div class="serch-bar-b">
+            <div><i class="fa-solid fa-magnifying-glass"></i> 메뉴 검색해서 찾기</div>
+          </div>
+        </div>
+        </div>        
+        
+        <div class="message flex">
+        <span><img src="images/message/debuggerc.png" alt="" class="massage_img"></span>
+        <span><img src="images/message/messagee.svg" alt="" class="massage_img_2"></span>
+        <span id="typing-text1" class="text-1"></span>
+        <span id="typing-text2" class="text-2"></span>
+        </div>
+        <div class="my_pc_security-box">
+          <div class="security_box">
+            <div class="secu_text">
+            <div class="secu_text_1">
+              내 PC 보안 관리
+            </div>
+            <div class="secu_text_2">
+              My pc security
+            </div>
+          </div>
+            <div class="security_box_content">
+              <div class="security_menu_scroll">
+              <div class="security_menu_all">
+              <span class="secu_menu main_back_up_botton flex">
+                <a href="#">
+                  <i class="fa-solid fa-download text-base"></i>
+                  &nbsp;&nbsp;백업 상태</a>
+                  <span class="secu_menu_go_button">보기 →
+                    </span>
+                      </span>
+              <span class="secu_stroke"></span>
+              <span class="secu_menu main_usb_botton flex">
+                <a href="#">
+                  <i class="fa-solid fa-unlock"></i>
+                  &nbsp;&nbsp;USB 포트 사용 제한</a>
+                    <label class="switch">
+                      <input type="checkbox" id="toggleSwitch">
+                        <span class="slider"></span>
+                          </label>
+                </span>
+                  <span class="secu_stroke"></span>
+                    <span class="secu_menu main_folder_botton flex">
+                      <a href="#">
+                        <i class="fa-solid fa-folder-open"></i>
+                          &nbsp;&nbsp;보호 폴더</a>
+                            <span class="secu_menu_go_button">변경 →
+                              </span>
+                                </span>
+              <span class="secu_stroke"></span>
+                <span class="secu_menu main_app_botton flex">
+                  <a href="#">
+                    <i class="fa-solid fa-laptop-file"></i>
+                      &nbsp;&nbsp;허용 앱</a>
+                        <span class="secu_menu_go_button">변경 →
+                          </span>
+                            </span>
+              <span class="secu_stroke"></span>
+              <span class="secu_menu main_ransome_ware_botton flex">
+                <a href="#">
+                  <i class="fa-solid fa-triangle-exclamation"></i>
+                    &nbsp;&nbsp;랜섬웨어 방지 기능</a>
+                      <label class="switch">
+                        <input type="checkbox" id="toggleSwitch">
+                          <span class="slider"></span>
+                            </label>
+                              </span>
+              <span class="secu_stroke"></span>
+              <span class="secu_menu main_file_lock_botton flex">
+                <a href="#">
+                  <i class="fa-solid fa-file-zipper"></i>
+                    &nbsp;&nbsp;파일 암호화</a>
+                      <span class="secu_menu_go_button">시작 →
+                        </span>
+                          </span>
+              <span class="secu_stroke"></span>
+              <span class="secu_menu main_check_off_work_botton flex">
+                <a href="#">
+                  <i class="fa-solid fa-building-circle-check"></i>
+                    &nbsp;&nbsp;퇴근 전 보안관리</a>
+                      <span class="secu_menu_go_button">시작 →
+                        </span>
+                          </span>
+              <span class="secu_stroke"></span>
+              <span class="secu_menu main_service_secu_botton flex">
+                <a href="#">
+                  <i class="fa-solid fa-user-lock"></i>
+                    &nbsp;&nbsp;서비스 보안</a>
+                      <span class="secu_menu_go_button">시작 →
+                        </span>
+                          </span>
+              <span class="secu_stroke"></span>
+              <span class="secu_menu main_premium+_botton flex">
+                <a href="#">
+                  <i class="fa-solid fa-circle-play"></i>
+                  &nbsp;&nbsp;모니터링</a>
+                  <span class="secu_menu_go_button">Premium+<i class="fa-solid fa-lock"></i>
+                    </span>
+                      </span>
+              
+
+              
+            </div>
+          </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    </div>
+  </div>
+    </section>
+    <!-- 렌더러 스크립트 연결 -->
+    <script src="renderer.js"></script>
+
+    <!-- 제이쿼리 -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
+    <!-- 폰트어썸 -->
+    <script src="https://kit.fontawesome.com/5257e5aa69.js" crossorigin="anonymous"></script>
+
+    <!--애니메이션,와우-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/wow/1.1.2/wow.min.js"></script>
+
+  </body>
+</html>

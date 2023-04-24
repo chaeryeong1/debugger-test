@@ -1,0 +1,44 @@
+{
+  "name": "debugger",
+  "version": "1.0.0",
+  "description": "debugger-backupsolution",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron .",
+    "build": "electron-builder",
+    "deploy": "electron-builder --windows nsis:ia32"
+  },
+  "build": {
+    "productName": "HelloElectron",
+    "appId": "com.electron.hello",
+    "asar": true,
+    "protocols": {
+      "name": "helloElectron",
+      "schemes": [
+        "helloelectron"
+      ]
+    },
+    "win": {
+      "target": [
+        "zip",
+        "nsis"
+      ],
+      "icon": "./resources/installer/Icon.ico"
+    },
+    "nsis": {
+      "oneClick": false,
+      "allowToChangeInstallationDirectory": true
+    },
+    "directories": {
+      "buildResources": "./resources/installer/",
+      "output": "./dist/",
+      "app": "."
+    }
+  },
+  "devDependencies": {
+    "@electron/asar": "^3.2.4",
+    "@electron/osx-sign": "^1.0.4",
+    "electron": "^24.1.2",
+    "electron-builder": "^23.6.0"
+  }
+}
